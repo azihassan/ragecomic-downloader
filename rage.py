@@ -29,11 +29,10 @@ def imgurddl(url):
 if __name__ == '__main__':
 	url = 'http://www.reddit.com/r/fffffffuuuuuuuuuuuu.json'
 	entries = json.loads(urllib2.urlopen(url).read())
-	#entries = json.loads(open('/var/www/scroph/redditviewer/cache/funny.json').read())
 	
 	try:
 		landing_dir = sys.argv[1]
-	except:
+	except IndexError:
 		landing_dir = 'pics'
 
 	landing_dir = os.path.join(os.path.dirname(__file__), landing_dir)
